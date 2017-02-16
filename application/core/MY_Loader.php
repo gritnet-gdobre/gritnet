@@ -37,7 +37,16 @@ class MY_Loader extends CI_Loader {
 		parent::__construct();
 	}
 	
-	function office_template($template_name, $data = array(), $return = FALSE)
+	public function template($template_name, $data = array(), $return = FALSE)
+	{
+		$data['navigation'] 	= 	$this->view('office/templates/navigation', NULL, TRUE);
+		$data['header'] 		= 	$this->view('office/templates/header', NULL, TRUE);
+		$data['footer'] 		= 	$this->view('office/templates/footer', NULL, TRUE);
+		
+		$this->load->view($template_name, $data);
+	}
+	
+	public function office_template($template_name, $data = array(), $return = FALSE)
 	{
 		$data['navigation'] 	= 	$this->view('office/templates/navigation', NULL, TRUE);
 		$data['header'] 		= 	$this->view('office/templates/header', NULL, TRUE);

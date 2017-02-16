@@ -7,3 +7,8 @@
 		$result = $query->row();
 		return $result->setting_value;
 	}
+	
+	function get_social($string)
+	{
+		
+	}

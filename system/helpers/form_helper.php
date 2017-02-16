@@ -135,6 +135,36 @@ if ( ! function_exists('form_open'))
 
 		return $form;
 	}
+	
+	function form_close()
+	{
+		return '</form>';
+	}
+	
+	function form_js($form_id, $console_id, $controller)
+	{
+		return '
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("form#' . $form_id . '").submit(function(event)
+			{
+				event.preventDefault();
+				$.ajax(
+				{
+					type: "POST",
+					url: "' . base_url($controller) . '",
+					data: $(this).serialize(),
+					dataType: "html",
+					success: function(data)
+					{
+						alert("success");
+					}
+				});
+			});
+		});
+		</script>';
+	}
 }
 
 // ------------------------------------------------------------------------
