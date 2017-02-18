@@ -6,7 +6,7 @@
 	</form>
 	<ul class="nav menu">
 		<li class="active"><a href="index.html">Dashboard</a></li>
-		<li><a href="<?php echo base_url(); ?>">Pages</a></li>
+		<li><a href="<?php echo base_url('office/pages'); ?>">Pages</a></li>
 		<li><a href="<?php echo base_url(); ?>">Gallery</a></li>
 		<li><a href="tables.html">Users</a></li>
 		<li><a href="forms.html">Settings</a></li>
