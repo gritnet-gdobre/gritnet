@@ -141,29 +141,49 @@ if ( ! function_exists('form_open'))
 		return '</form>';
 	}
 	
-	function form_js($form_id, $console_id, $controller)
+	function form_js($form_id, $console_id, $controller, $tinymce=false)
 	{
-		return '
+		$script = '
 		<script type="text/javascript">
 		$(document).ready(function()
 		{
 			$("form#' . $form_id . '").submit(function(event)
 			{
 				event.preventDefault();
+				
+				';
+		
+		if($tinymce==true)
+		{
+			$script .= 'tinyMCE.triggerSave();';
+		}
+		
+		$script .= '
+		
 				$.ajax(
 				{
 					type: "POST",
 					url: "' . base_url($controller) . '",
 					data: $(this).serialize(),
-					dataType: "html",
-					success: function(data)
+					dataType: "json",
+					success: function(response, status, xhr)
 					{
-						alert("success");
+						switch(response.status)
+						{
+							case 201:
+								window.location.replace(response.url);
+							break;
+							case 400:
+								$("div#' . $console_id . '").html(response.errors).removeAttr("class").addClass("alert-danger");
+							break;
+						}
 					}
 				});
 			});
 		});
 		</script>';
+		
+		return $script;
 	}
 }
 
