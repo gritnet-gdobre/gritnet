@@ -24,7 +24,15 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Pages</div>
+					<div class="panel-heading">
+						Pages
+						<div class="pull-right">
+							<a href="<?php echo base_url('office/pages/add'); ?>" class="btn btn-success">
+								Add page
+							</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
 					<div class="panel-body">
 						<table class="table table-striped">
 							<thead>
@@ -40,6 +48,10 @@
 									<tr>
 										<td><?php echo $page['page_title']; ?></td>
 										<td><?php echo $page['page_parent_title']; ?></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="<?php echo base_url('office/pages/view/' . $page['page_id']); ?>" class="btn btn-warning">View</a></td>
 									</tr>
 								<?php endforeach; ?>
 							</tbody>

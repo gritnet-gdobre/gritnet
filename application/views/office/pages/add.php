@@ -29,6 +29,7 @@
 		<form id="pages_add">
 		<div class="row">
 			<div class="col-sm-9">
+				<div id="pages_add_console"></div>
 				<div class="form-group">
 					<input type="text" name="page_title" id="page_title" placeholder="Enter title here" class="form-control"/>
 				</div>
@@ -79,7 +80,7 @@
 		</form>
 	</div>	<!--/.main-->
 	<?php echo office_load_scripts(); ?>
-	<?php echo form_js('pages_add', 'pages_add_console', 'office/pages/add_page'); ?>
+	<?php echo form_js('pages_add', 'pages_add_console', 'office/pages/add_page', true); ?>
 	<script type="text/javascript" src="<?php echo base_url('vendor/tinymce/tinymce/tinymce.min.js'); ?>"></script>
 	<script type="text/javascript">
 	tinymce.init(

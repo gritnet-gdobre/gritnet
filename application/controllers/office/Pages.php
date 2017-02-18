@@ -8,6 +8,7 @@
 		{
 			parent::__construct();
 			$this->load->model('Pages_Model');
+			$this->load->library('form_validation');
 		}
 		
 		public function index()
@@ -18,7 +19,6 @@
 		
 		public function add()
 		{
-			$this->load->library('form_validation');
 			
 			$data['pages'] = $this->Pages_Model->get_pages();
 			$this->load->office_template('office/pages/add', $data);
@@ -27,23 +27,22 @@
 		
 		public function add_page()
 		{
-			$this->form_validation->set_rules('project_parent', 'Project parent', 'required');
-			$this->form_validation->set_rules('project_name', 'Project name', 'required');
+			$this->form_validation->set_rules('page_title', 'Page title', 'required');
+			$this->form_validation->set_rules('page_content', 'Page content', 'required');
 			
 			if($this->form_validation->run()===true)
 			{
-				if($this->Portofolio_Model->add_project()===true)
-				{
-					echo '1';
-				}
-				else
-				{
-					echo 'Server error';
-				}
+				$this->Pages_Model->add_page();
+				$response['status'] = 201;
+				$response['url'] = base_url('office/pages');
 			}
 			else
 			{
-				echo validation_errors();
+				$response['status'] = 400;
+				$response['errors'] = validation_errors();
 			}
+			
+			header('Content-Type: application/json');
+			echo json_encode($response);
 		}
 	}
