@@ -22,7 +22,6 @@
 			
 			$data['pages'] = $this->Pages_Model->get_pages();
 			$this->load->office_template('office/pages/add', $data);
-			echo 'ceva';
 		}
 		
 		public function add_page()
