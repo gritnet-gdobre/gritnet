@@ -3,7 +3,8 @@
     "description": "GMS is a basic content management system based on CodeIgniter with the sole purpose of helping in the development of small to medium custom websites",
     "type": "project",
     "require": {
-        "rmccue/requests": "^1.7"
+        "rmccue/requests": "^1.7",
+	"php-amqplib/php-amqplib": "2.6.*"
     },
     "authors": [
         {
