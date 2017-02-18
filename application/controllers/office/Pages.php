@@ -45,9 +45,14 @@
 			echo json_encode($response);
 		}
 		
-		public function view($slug)
+		public function edit($slug)
 		{
 			$data['page'] = $this->Pages_Model->get_pages($slug);
-			$this->load->office_template('office/pages/view', $data);
+			$this->load->office_template('office/pages/edit', $data);
+		}
+		
+		public function edit_page($page_id)
+		{
+			echo "edit page";
 		}
 	}

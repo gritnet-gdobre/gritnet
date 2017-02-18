@@ -51,7 +51,7 @@
 										<td></td>
 										<td></td>
 										<td></td>
-										<td><a href="<?php echo base_url('office/pages/view/' . $page['page_slug']); ?>" class="btn btn-warning">View</a></td>
+										<td><a href="<?php echo base_url('office/pages/edit/' . $page['page_slug']); ?>" class="btn btn-warning">View</a></td>
 									</tr>
 								<?php endforeach; ?>
 							</tbody>
