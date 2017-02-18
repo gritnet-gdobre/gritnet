@@ -11,11 +11,11 @@
 		{
 			if($slug==null)
 			{
-				$query = $this->db->select('t1.page_id, t1.page_parent, t1.page_title, t2.page_id, t2.page_title AS page_parent_title')->from('pages t1')->join('pages t2', 't2.page_id=t1.page_parent')->get()->result_array();
+				$query = $this->db->select('t1.page_id, t1.page_parent, t1.page_title, t1.page_slug, t2.page_id, t2.page_title AS page_parent_title')->from('pages t1')->join('pages t2', 't2.page_id=t1.page_parent')->get()->result_array();
 			}
 			else
 			{
-				$query = $this->db->select('*')->get_where('pages', array('page_slug' => $slug))->result_array();
+				$query = $this->db->select('*')->get_where('pages', array('page_slug' => $slug))->row_array();
 			}
 			
 			return $query;
@@ -62,6 +62,11 @@
 			);
 			
 			$query = $this->db->insert('pages', $page);
+		}
+		
+		public function parent_page($page_id)
+		{
+			
 		}
 		
 		public function listPages()

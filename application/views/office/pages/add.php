@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Lumino - Dashboard</title>
+		<title><?php echo get_website_title('Add page | Pages'); ?></title>
 		<?php echo office_load_styles(); ?>
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>

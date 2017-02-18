@@ -45,4 +45,10 @@
 			header('Content-Type: application/json');
 			echo json_encode($response);
 		}
+		
+		public function view($slug)
+		{
+			$data['page'] = $this->Pages_Model->get_pages($slug);
+			$this->load->office_template('office/pages/view', $data);
+		}
 	}
