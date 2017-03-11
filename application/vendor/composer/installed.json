@@ -121,5 +121,42 @@
             "queue",
             "rabbitmq"
         ]
+    },
+    {
+        "name": "textmagic/smsphp",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nezkal/TextMagicSMS.git",
+            "reference": "c99960e5efefc8830deb99238aa48cbb66e5345f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nezkal/TextMagicSMS/zipball/c99960e5efefc8830deb99238aa48cbb66e5345f",
+            "reference": "c99960e5efefc8830deb99238aa48cbb66e5345f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "time": "2014-04-03T17:43:08+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "TextMagicSMS": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD license"
+        ],
+        "description": "TextMagicSMS API PHP with PSR-0 and Composer/Packagists Library",
+        "keywords": [
+            "php",
+            "sms",
+            "textmagic"
+        ]
     }
 ]

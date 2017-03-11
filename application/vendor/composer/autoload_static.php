@@ -21,6 +21,13 @@ class ComposerStaticInitb5b9aae065e79a3e4e9b17198a9e2cc2
     );
 
     public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'TextMagicSMS' => 
+            array (
+                0 => __DIR__ . '/..' . '/textmagic/smsphp/src',
+            ),
+        ),
         'R' => 
         array (
             'Requests' => 

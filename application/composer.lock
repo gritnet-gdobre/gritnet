@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a969c86f7dd209250a31ef5aeea04946",
+    "content-hash": "c1c9c4687b6f106ca3a47869c93a76da",
     "packages": [
         {
             "name": "php-amqplib/php-amqplib",
@@ -124,12 +124,49 @@
                 "sockets"
             ],
             "time": "2016-10-13T00:11:37+00:00"
+        },
+        {
+            "name": "textmagic/smsphp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nezkal/TextMagicSMS.git",
+                "reference": "c99960e5efefc8830deb99238aa48cbb66e5345f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nezkal/TextMagicSMS/zipball/c99960e5efefc8830deb99238aa48cbb66e5345f",
+                "reference": "c99960e5efefc8830deb99238aa48cbb66e5345f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "TextMagicSMS": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD license"
+            ],
+            "description": "TextMagicSMS API PHP with PSR-0 and Composer/Packagists Library",
+            "keywords": [
+                "php",
+                "sms",
+                "textmagic"
+            ],
+            "time": "2014-04-03 17:43:08"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "textmagic/smsphp": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

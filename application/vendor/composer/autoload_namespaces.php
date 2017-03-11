@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'TextMagicSMS' => array($vendorDir . '/textmagic/smsphp/src'),
     'Requests' => array($vendorDir . '/rmccue/requests/library'),
 );
