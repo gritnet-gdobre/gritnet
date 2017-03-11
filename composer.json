@@ -1,5 +1,6 @@
 {
     "require": {
-        "tinymce/tinymce": "^4.5"
-    }
+        "tinymce/tinymce": "^4.5",
+        "blueimp/jquery-file-upload": "^9.17"
+	}
 }

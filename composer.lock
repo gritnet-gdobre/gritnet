@@ -4,20 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f6421e7b3955e8c11ea4671bd6f35b2",
+    "content-hash": "becaf175cb1c48e51e5f05849873deb6",
     "packages": [
         {
-            "name": "tinymce/tinymce",
-            "version": "4.5.3",
+            "name": "blueimp/jquery-file-upload",
+            "version": "v9.17.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tinymce/tinymce-dist.git",
-                "reference": "2e662f527e6d776627b9b6c6c854d0a557169a70"
+                "url": "https://github.com/vkhramtsov/jQuery-File-Upload.git",
+                "reference": "1e630dd8e96f517bf33f6fc20d93a2cb930a2c0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/2e662f527e6d776627b9b6c6c854d0a557169a70",
-                "reference": "2e662f527e6d776627b9b6c6c854d0a557169a70",
+                "url": "https://api.github.com/repos/vkhramtsov/jQuery-File-Upload/zipball/1e630dd8e96f517bf33f6fc20d93a2cb930a2c0f",
+                "reference": "1e630dd8e96f517bf33f6fc20d93a2cb930a2c0f",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Tschan",
+                    "homepage": "https://blueimp.net"
+                }
+            ],
+            "description": "File Upload widget for jQuery.",
+            "homepage": "https://github.com/blueimp/jQuery-File-Upload",
+            "keywords": [
+                "bootstrap",
+                "chunk",
+                "cross-domain",
+                "cross-site",
+                "drag",
+                "drop",
+                "file",
+                "gae",
+                "go",
+                "jquery",
+                "multiple",
+                "php",
+                "preview",
+                "progress",
+                "python",
+                "resume",
+                "selection",
+                "upload",
+                "widget"
+            ],
+            "time": "2017-02-20T06:05:50+00:00"
+        },
+        {
+            "name": "tinymce/tinymce",
+            "version": "4.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tinymce/tinymce-dist.git",
+                "reference": "2317d15fd7b68fa115ee182ae066b4c712bbbe9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/2317d15fd7b68fa115ee182ae066b4c712bbbe9f",
+                "reference": "2317d15fd7b68fa115ee182ae066b4c712bbbe9f",
                 "shasum": ""
             },
             "type": "component",
@@ -50,7 +100,7 @@
                 "tinymce",
                 "wysiwyg"
             ],
-            "time": "2017-02-01T14:27:24+00:00"
+            "time": "2017-02-23T12:44:46+00:00"
         }
     ],
     "packages-dev": [],
