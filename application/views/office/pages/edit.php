@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title><?php echo get_website_title('Add page | Pages'); ?></title>
+		<title><?php echo get_website_title($page['page_title'] . ' - Update page - Pages'); ?></title>
 		<?php echo office_load_styles(); ?>
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
@@ -23,13 +23,11 @@
 		</div><!--/.row-->
 		<div class="row">
 			<div class="col-lg-12">
-				<pre>
-				<?php var_dump($page); ?>
-				</pre>
 				<h1 class="page-header"><?php echo $page['page_title']; ?></h1>
 			</div>
 		</div><!--/.row-->
 		<form id="pages_add">
+		<input type="hidden" name="page_id" id="page_id" value="<?php echo $page['page_id']; ?>"/>
 		<div class="row">
 			<div class="col-sm-9">
 				<div id="pages_add_console"></div>
@@ -42,7 +40,10 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Publishing</div>
 					<div class="panel-body">
-						
+						Published on
+						<?php echo $page['page_created']; ?>
+						<br/>
+						Modified on <?php echo $page['page_modified']; ?>
 					</div>
 					<div class="panel-footer">
 						<input type="submit" class="btn btn-primary" value="Publish"/>
@@ -54,15 +55,7 @@
 						<div class="form-group">
 							<label for="page_parent">Parent</label>
 							<select name="page_parent" id="page_parent" class="form-control">
-								<option value="" disabled="disabled" selected="selected">(no parent)</option>
-								<?php
-								
-									foreach($pages as $page)
-									{
-										echo '<option value="' . $page['page_id'] . '">' . $page['page_title'] . '</option>';
-									}
-									
-								?>
+								<?php echo default_option($pages, 'page_parent', 'page_id', 'page_title', $page['page_parent']); ?>
 							</select>
 						</div>
 						<div class="form-group">
@@ -83,7 +76,7 @@
 		</form>
 	</div>	<!--/.main-->
 	<?php echo office_load_scripts(); ?>
-	<?php echo form_js('pages_add', 'pages_add_console', 'office/pages/add_page', true); ?>
+	<?php echo form_js('pages_add', 'pages_add_console', 'office/pages/edit_page', true); ?>
 	<script type="text/javascript" src="<?php echo base_url('vendor/tinymce/tinymce/tinymce.min.js'); ?>"></script>
 	<script type="text/javascript">
 	tinymce.init(

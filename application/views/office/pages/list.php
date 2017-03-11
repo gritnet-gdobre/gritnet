@@ -3,14 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Lumino - Dashboard</title>
+		<title><?php echo get_website_title('Pages'); ?></title>
 		<?php echo office_load_styles(); ?>
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
 	</head>
-
 <body>
 	<?php echo $header; ?>
 	<?php echo $navigation; ?>

@@ -48,11 +48,28 @@
 		public function edit($slug)
 		{
 			$data['page'] = $this->Pages_Model->get_pages($slug);
+			$data['pages'] = $this->Pages_Model->get_pages();
 			$this->load->office_template('office/pages/edit', $data);
 		}
 		
-		public function edit_page($page_id)
+		public function edit_page()
 		{
-			echo "edit page";
+			$this->form_validation->set_rules('page_title', 'Page title', 'required');
+			$this->form_validation->set_rules('page_content', 'Page content', 'required');
+			
+			if($this->form_validation->run()===true)
+			{
+				$this->Pages_Model->update_page();
+				$response['status'] = 201;
+				$response['url'] = base_url('office/pages');
+			}
+			else
+			{
+				$response['status'] = 400;
+				$response['errors'] = validation_errors();
+			}
+			
+			header('Content-Type: application/json');
+			echo json_encode($response);
 		}
 	}
