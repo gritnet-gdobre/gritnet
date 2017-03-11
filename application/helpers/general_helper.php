@@ -1,5 +1,22 @@
 <?php
 
+	function default_option($values, $parent, $id, $name, $default)
+	{
+		$options = '';
+		foreach($values as $value)
+		{
+			$options .= '<option value="' . $value[$id] . '"';
+			
+			if($value[$id]==$default)
+			{
+				$options .= ' selected="selected"';
+			}
+			
+			$options .= '>' . $value[$name] . '</option>';
+		}
+		return $options;
+	}
+	
 	function breadcrumbs($separator = ' » ', $home = 'Home', $trail = false) 
 	{
 		$path = array_filter(explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));

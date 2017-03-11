@@ -45,7 +45,6 @@
 		$styles = array
 		(
 			'bootstrap'			=>	'css/bootstrap.min',
-			'bootstrap-theme'	=>	'css/bootstrap-theme.min',
 			'font-awesome'		=>	'css/font-awesome.min',
 			'fixlancer'			=>	'css/office'
 		);
@@ -65,7 +64,8 @@
 		$scripts = array
 		(
 			'jquery'			=>	'js/jquery-1.11.1.min',
-			'bootstrap'			=>	'js/bootstrap.min'
+			'bootstrap'			=>	'js/bootstrap.min',
+			'fixlancer'			=>	'js/office/general'
 		);
 		
 		foreach($scripts as $file=>$path)
