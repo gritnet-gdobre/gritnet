@@ -8,4 +8,7 @@
 		{
 			$this->load->template('homepage');
 		}
+
+		public function loading() {
+}
 	}
